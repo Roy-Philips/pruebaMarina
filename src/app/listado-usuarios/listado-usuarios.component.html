@@ -1,0 +1,12 @@
+<div>
+    <select (change)="cambioTipo">
+        <option value="demandante">demandante</option>
+        <option value="empleado">empleado</option>
+    </select>
+</div>
+
+<div>
+    <ul>
+        <li *ngFor="let item of listado">{{item.nombre}}</li>
+    </ul>
+</div>

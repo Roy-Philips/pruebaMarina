@@ -1,0 +1,77 @@
+<div>
+    <label>tipo empleado</label>
+    <select  (change)="cambiarTipo($event)">
+        <option value="demandante">demandante</option>
+        <option value="empleado">empleado</option>
+    </select>
+    <form [formGroup]="usuarioForm">
+        <ul>
+            <li>
+                <label>NIF/Pasaporte</label>
+                <input type="text" formControlName="nifPass">
+            </li>
+            <li>
+                <label>Nombre</label>
+                <input type="text" formControlName="nombre">
+            </li>
+            <li>
+                <label>Apellido 1</label>
+                <input type="text" formControlName="apellido1">
+            </li>
+            <li>
+                <label>Apellido 2</label>
+                <input type="text" formControlName="apellido2">
+            </li>
+            <li>
+                <label>Genero</label>
+                <input type="text" formControlName="genero">
+            </li>
+            <li>
+                <label>Fecha nacimiento</label>
+                <input type="text" formControlName="fechaNacimiento">
+            </li>
+            <li>
+                <label>calle</label>
+                <input type="text" formControlName="calle">
+            </li>
+            <li>
+                <label>numero</label>
+                <input type="text" formControlName="numero">
+            </li>
+            <li>
+                <label>puerta</label>
+                <input type="text" formControlName="puerta">
+            </li>
+            <li>
+                <label>codigoPostal</label>
+                <input type="text" formControlName="codigoPostal">
+            </li>
+            <li  *ngIf="tipoFormulario === 'demandante'">
+                <label>nombreInstitucion</label>
+                <input type="text" formControlName="nombreInstitucion">
+            </li>
+            <li  *ngIf="tipoFormulario === 'demandante'">
+                <label>titulacion</label>
+                <input type="text" formControlName="titulacion">
+            </li>
+            <li  *ngIf="tipoFormulario === 'demandante'">
+                <label>fechaTitulacion</label>
+                <input type="text" formControlName="fechaTitulacion">
+            </li>
+            <li *ngIf="tipoFormulario === 'empleado'">
+                <label>nombreEmpresa</label>
+                <input type="text" formControlName="nombreEmpresa">
+            </li>
+            <li  *ngIf="tipoFormulario === 'empleado'">
+                <label>puestoTrabajo</label>
+                <input type="text" formControlName="puestoTrabajo">
+            </li>
+            <li  *ngIf="tipoFormulario === 'empleado'">
+                <label>fechaTitulacion</label>
+                <input type="text" formControlName="fechaTrabajo">
+            </li>
+        </ul>
+       
+    </form>
+    <button (click)="guardar()">Guardar</button>
+</div>
